@@ -13,10 +13,10 @@
   <body>
     <div id="app">
       <header class="header">
-        <div class="badge">Встречаемся в 2031</div>
+        <div id="badge" class="badge">Встречаемся в</div>
         <h1 class="title">Следующая встреча выпускников</h1>
-        <p class="subtitle">
-          Отсчет до последней субботы февраля &nbsp;2031
+        <p id="subtitle" class="subtitle">
+          Отсчет до последней субботы февраля
         </p>
       </header>
 
@@ -33,11 +33,11 @@
             <div class="clock-inner">
               <div class="countdown-label">До встречи осталось</div>
               <div class="countdown">
-                <div class="time-segment">
+                <div class="time-segment" style="display: none">
                   <span id="years" class="time-value">--</span>
                   <span class="time-unit">YY</span>
                 </div>
-                <span class="colon">:</span>
+                <span class="colon" style="display: none">:</span>
                 <div class="time-segment">
                   <span id="days" class="time-value">--</span>
                   <span class="time-unit">DD</span>

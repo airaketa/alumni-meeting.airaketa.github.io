@@ -1,7 +1,17 @@
 // Compute the last Saturday of February 2031 in the user's local timezone.
 function getLastSaturdayOfFeb2031() {
-  const year = 2031;
+  const year = new Date().getFullYear() + 1;
   const monthIndex = 1; // February is 1 (0-based)
+
+  const badgeEl = document.getElementById("badge");
+  if (badgeEl) {
+    badgeEl.textContent = "Встречаемся в " + year
+  }
+  
+  const subtitleEl = document.getElementById("subtitle");
+  if (subtitleEl) {
+    subtitleEl.textContent = "Отсчет до последней субботы февраля " + year
+  }
 
   // Start from last day of February
   const lastDayOfFeb = new Date(year, monthIndex + 1, 0); // March 0 = last day of Feb
@@ -32,15 +42,13 @@ function updateCountdown(targetDate) {
   const now = new Date();
   const diffMs = targetDate.getTime() - now.getTime();
 
-  const yearsEl = document.getElementById("years");
   const daysEl = document.getElementById("days");
   const hoursEl = document.getElementById("hours");
   const minutesEl = document.getElementById("minutes");
 
-  if (!yearsEl || !daysEl || !hoursEl || !minutesEl) return;
+  if (!daysEl || !hoursEl || !minutesEl) return;
 
   if (diffMs <= 0) {
-    yearsEl.textContent = "00";
     daysEl.textContent = "00";
     hoursEl.textContent = "00";
     minutesEl.textContent = "00";
@@ -83,7 +91,6 @@ function updateCountdown(targetDate) {
   const hours = Math.floor((totalMinutes % (24 * 60)) / 60);
   const minutes = totalMinutes % 60;
 
-  yearsEl.textContent = String(years).padStart(2, "0");
   daysEl.textContent = String(days).padStart(2, "0");
   hoursEl.textContent = String(hours).padStart(2, "0");
   minutesEl.textContent = String(minutes).padStart(2, "0");
