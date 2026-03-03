@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const targetDate = getLastSaturdayOfFeb2031();
   const targetDateTextEl = document.getElementById("target-date-text");
   if (targetDateTextEl) {
-    targetDateTextEl.textContent = `Meeting starts on ${formatTargetDate(
+    targetDateTextEl.textContent = `Встреча начнется ${formatTargetDate(
       targetDate
     )}`;
   }

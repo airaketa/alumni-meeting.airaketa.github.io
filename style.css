@@ -35,16 +35,18 @@ body {
   display: flex;
   align-items: stretch;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 #app {
   flex: 1;
-  max-width: 480px;
+  width: 100%;
+  max-width: 420px;
   margin: 0 auto;
-  padding: 20px 18px 16px;
+  padding: 10px 10px 10px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
   min-height: 100vh;
 }
 
@@ -71,15 +73,15 @@ body {
 }
 
 .title {
-  margin: 8px 0 4px;
-  font-size: 20px;
+  margin: 6px 0 2px;
+  font-size: clamp(16px, 4.4vw, 20px);
   font-weight: 700;
   letter-spacing: 0.01em;
 }
 
 .subtitle {
   margin: 0;
-  font-size: 13px;
+  font-size: clamp(11px, 3.4vw, 13px);
   color: var(--text-muted);
 }
 
@@ -93,7 +95,7 @@ body {
 
 .card {
   width: 100%;
-  padding: 26px 18px 26px;
+  padding: 16px 14px 18px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-soft);
   background:
@@ -132,53 +134,62 @@ body {
 }
 
 .photo-frame-a {
-  width: 78%;
+  width: 60%;
   aspect-ratio: 4 / 3;
-  top: -48%;
-  left: -54%;
+  top: -66%;
+  left: -14%;
   transform: rotate(-8deg);
-  background-image: url("https://web.telegram.org/e0713cc8-88cd-44b3-95c7-cf9789e21515");
+  background-image: url('1.jpeg'); 
 }
 
 .photo-frame-b {
-  width: 74%;
+  width: 66%;
   aspect-ratio: 4 / 3;
-  bottom: -66%;
-  right: -48%;
+  top: -55%;
+  right: -10%;
   transform: rotate(10deg);
-  background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80");
+  background-image: url('4.jpeg');
 }
 
 .photo-frame-c {
-  width: 58%;
+  width: 68%;
   aspect-ratio: 4 / 3;
-  top: 70%;
-  right: -30%;
-  transform: rotate(6deg);
-  background-image: url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80");
+  bottom: -95%;
+  left: -6%;
+  transform: rotate(-5deg);
+  background-image: url('2.jpeg');
 }
 
 .photo-frame-d {
-  width: 40%;
+  width: 50%;
   aspect-ratio: 4 / 3;
-  top: 68%;
-  left: -36%;
-  transform: rotate(-3deg);
-  background-image: url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80");
+  bottom: -65%;
+  right: -5%;
+  transform: rotate(4deg);
+  background-image: url('3.jpeg');
 }
 
-.photo-frame-e {
-  width: 42%;
+.photo-frame-f {
+  width: 40%;
   aspect-ratio: 4 / 3;
-  bottom: -30%;
-  left: 18%;
-  transform: rotate(5deg);
-  background-image: url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80");
+  top: 30%;
+  left: -30%;
+  transform: rotate(-20deg);
+  background-image: url('6.jpeg');
+}
+
+.photo-frame-g {
+  width: 45%;
+  aspect-ratio: 4 / 3;
+  bottom: 4%;
+  right: -30%;
+  transform: rotate(26deg);
+  background-image: url('5.jpeg');
 }
 
 .clock-circle {
   width: 100%;
-  max-width: 360px;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,7 +211,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 18px 14px 20px;
+  padding: 14px 10px 16px;
   border: 1px solid rgba(148, 163, 184, 0.55);
 }
 
@@ -217,19 +228,20 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 10px;
+  gap: 6px;
 }
 
 .time-segment {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 80px;
+  flex: 1;
+  min-width: 0;
 }
 
 .time-value {
   font-variant-numeric: tabular-nums;
-  font-size: 72px;
+  font-size: clamp(32px, 11vw, 48px);
   font-weight: 700;
   letter-spacing: 0.06em;
 }
@@ -242,7 +254,7 @@ body {
 }
 
 .colon {
-  font-size: 42px;
+  font-size: clamp(22px, 7vw, 30px);
   line-height: 1;
   opacity: 0.65;
 }
@@ -265,21 +277,61 @@ body {
   color: var(--text-muted);
 }
 
-@media (max-width: 360px) {
+@media (max-width: 420px), (max-height: 720px) {
   #app {
-    padding-inline: 12px;
+    padding-inline: 6px;
   }
 
   .card {
-    padding-inline: 14px;
+    padding-inline: 8px;
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
 
   .clock-circle {
     max-width: 100%;
   }
 
-  .time-value {
-    font-size: 52px;
+  .photo-frame-a {
+    width: 34%;
+    top: 4%;
+    left: -2%;
+  }
+
+  .photo-frame-b {
+    width: 32%;
+    top: 0%;
+    right: -4%;
+  }
+
+  .photo-frame-c {
+    width: 30%;
+    bottom: -4%;
+    right: 2%;
+  }
+
+  .photo-frame-d {
+    width: 30%;
+    bottom: -4%;
+    left: -4%;
+  }
+
+  .photo-frame-e {
+    width: 24%;
+    top: 40%;
+    left: 32%;
+  }
+
+  .photo-frame-f {
+    width: 22%;
+    top: 20%;
+    left: 54%;
+  }
+
+  .photo-frame-g {
+    width: 22%;
+    bottom: 10%;
+    left: 54%;
   }
 }
 
